@@ -32,3 +32,5 @@ source ~/.profile
 
 - [ohmyz.sh](https://ohmyz.sh/)
 - [Projeto do curso](https://github.com/luizomf/curso-reactjs-nextjs-project-1)
+- [React Lifecycle Methods Diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+- [Free fake API for testing and prototyping](https://jsonplaceholder.typicode.com/)
