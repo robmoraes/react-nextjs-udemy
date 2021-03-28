@@ -34,3 +34,4 @@ source ~/.profile
 - [Projeto do curso](https://github.com/luizomf/curso-reactjs-nextjs-project-1)
 - [React Lifecycle Methods Diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 - [Free fake API for testing and prototyping](https://jsonplaceholder.typicode.com/)
+- [Add SSH Key - GitHub](https://docs.github.com/pt/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
