@@ -28,6 +28,12 @@ sudo n stable
 source ~/.profile
 ```
 
+## Referências citadas no curso
+
+- Avaliação de Curto Circuíto do JavaScript
+- Desconstructing Methods
+- [].slice(0, 1)
+
 ## Links
 
 - [ohmyz.sh](https://ohmyz.sh/)

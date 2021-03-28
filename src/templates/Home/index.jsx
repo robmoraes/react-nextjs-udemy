@@ -3,6 +3,7 @@ import './styles.css';
 import { Posts } from '../../components/Posts';
 import { loadPosts } from '../../utils/load-posts';
 import { Button } from '../../components/Button';
+import { TextInput } from '../../components/TextInput';
 
 export class Home extends Component {
 
@@ -11,6 +12,7 @@ export class Home extends Component {
     allPosts: [],
     page: 0,
     postsPerPage: 10,
+    searchValue: '',
   }
 
   componentDidMount() {
@@ -40,20 +42,61 @@ export class Home extends Component {
     console.log(nextPosts)
   }
 
+  handleChange = (e) => {
+    const { value } = e.target
+    this.setState({ searchValue: value })
+    console.log(value)
+  }
+
+  filterPosts = (searchValue, allPosts, posts) => {
+    if (!!searchValue) {
+      return allPosts.filter( (post) => {
+        return post.title.toLowerCase().includes(
+          searchValue.toLowerCase()
+        )
+      } )
+    }
+
+    return posts
+  }
+
   render() {
-    const { posts, page, postsPerPage, allPosts } = this.state
-
+    const {
+      posts,
+      page,
+      postsPerPage,
+      allPosts,
+      searchValue
+    } = this.state
     const noMorePosts = (page + postsPerPage) >= allPosts.length
-
+    const filteredPosts = this.filterPosts(searchValue, allPosts, posts)
     return (
       <section className="container">
-        <Posts posts={posts} />
+        <div className="search-container">
+          {!!searchValue && (
+            <h1>Search Value: {searchValue}</h1>
+          )}
+          <TextInput
+            handleChange={this.handleChange}
+            searchValue={searchValue}
+          />
+        </div>
+
+        {filteredPosts.length > 0 && (
+          <Posts posts={filteredPosts} />
+        )}
+        {filteredPosts.length === 0 && (
+          <p>Não existem posts.</p>
+        )}
+        
         <div className="button-container">
+        {!searchValue && (
           <Button 
             label="Load More Posts"
             onClick={this.loadMorePosts}
             disabled={noMorePosts}
           />
+        )}
         </div>
       </section>
     );
