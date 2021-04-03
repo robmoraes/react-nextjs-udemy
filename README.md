@@ -28,6 +28,11 @@ sudo n stable
 source ~/.profile
 ```
 
+## Eventos Sintéticos
+
+- [SyntheticEvent](https://pt-br.reactjs.org/docs/events.html)
+- [Manipulando Eventos](https://pt-br.reactjs.org/docs/handling-events.html)
+
 ## Referências citadas no curso
 
 - Avaliação de Curto Circuíto do JavaScript

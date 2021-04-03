@@ -6,7 +6,6 @@ import { Button } from '../../components/Button';
 import { TextInput } from '../../components/TextInput';
 
 export class Home extends Component {
-
   state = {
     posts: [],
     allPosts: [],
@@ -39,13 +38,11 @@ export class Home extends Component {
     const nextPosts = allPosts.slice(nextPage, (nextPage + postsPerPage))
     posts.push(...nextPosts)
     this.setState({ posts, page: nextPage })
-    console.log(nextPosts)
   }
 
   handleChange = (e) => {
     const { value } = e.target
     this.setState({ searchValue: value })
-    console.log(value)
   }
 
   filterPosts = (searchValue, allPosts, posts) => {
